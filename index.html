@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSThePoet </title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <style>
+        :root {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --header-footer-bg: #333;
+            --header-footer-text: #fff;
+            --link-focus: #ffa500;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --header-footer-bg: #222;
+            --header-footer-text: #fff;
+            --link-focus: #ffa500;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header, footer {
+            background-color: var(--header-footer-bg);
+            color: var(--header-footer-text);
+            text-align: center;
+            padding: 1rem;
+        }
+        nav a {
+            color: var(--header-footer-text);
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: var(--background-color);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: var(--text-color);
+        }
+        a:focus, button:focus {
+            outline: 3px solid var(--link-focus);
+        }
+        .social-links a {
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+        .social-links img {
+            width: 32px;
+            height: 32px;
+        }
+        img.rs-photo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        #theme-toggle {
+            background-color: transparent;
+            border: 1px solid var(--header-footer-text);
+            color: var(--header-footer-text);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        #theme-toggle:hover {
+            background-color: var(--link-focus);
+            color: var(--header-footer-bg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="home">Welcome to RSThePoet's Official Website</h1>
+        <nav aria-label="Main navigation">
+            <a href="#content" accesskey="c">Skip to Content</a>
+            <a href="#footer" accesskey="f">Skip to Footer</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
+    </header>
+
+    <main id="content" tabindex="0">
+        <h2>About RSThePoet</h2>
+        <img src="rs-https://github.com/RSThePoet/web/blob/main/assets/rs.png" alt="RSThePoet's Photo" class="rs-photo">
+        <p>
+            RS is a trailblazing Nepali rapper, lyricist, and public speaker who uses art to inspire and transform lives. At just 18 years old, RS has become a voice for the unheard, drawing from personal struggles and life experiences to create powerful music and meaningful conversations. Despite being visually impaired, RS proves that determination and talent know no boundaries.
+        </p>
+        <p>
+            With a growing discography that includes an EP and multiple singles, RS's album <strong>Painful Memories</strong> stands out for its raw storytelling, tackling themes like love, addiction, and societal challenges. Songs like <em>"Abhinay"</em> and <em>"Promise"</em> resonate deeply with listeners, blending thought-provoking lyrics with soulful artistry.
+        </p>
+        <p>
+            RS is also the creator of the impactful podcast <strong>Real Talk with Aarati Records</strong>, where real-life stories, struggles, and motivational journeys are shared to uplift and inspire. Every episode reflects RS's passion for bringing voices together to spark change and empower individuals.
+        </p>
+        <p>
+            Whether through music, writing, or public speaking, RS’s mission is clear: to connect, inspire, and leave a lasting impact on the world.
+        </p>
+    </main>
+
+    <footer id="footer" tabindex="0">
+        <div class="social-links">
+            <a href="https://open.spotify.com/artist/4VhSQA1pxSZHwgf30vdQVp?si=wARqv7hEQJmSe-Tfxks56w
+" target="_blank"><img src="spotify-icon.png" alt="Spotify"></a>
+            <a href="https://www.instagram.com/rsthepoetofficial/profilecard/?igsh=NTBrdTllZDR3b3Bt" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://youtube.com/@rsthepoet?si=6dk4rJefJ6agRyfT" target="_blank"><img src="https://github.com/RSThePoet/web/blob/main/assets/YouTube_icon.png" alt="YouTube"></a>
+            <a href="https://www.facebook.com/profile.php?id=61563763721413&mibextid=ZbWKwL" target="_blank"><img src="https://github.com/RSThePoet/web/blob/main/assets/Facebook_icon.png" alt="Facebook"></a>
+            <a href="mailto:shankarrauniyar516@gmail.com"><img src="email-icon.png" alt="Email"></a>
+            <a href="https://www.tiktok.com/@rsthepoetofficial?_t=8rl55wfq4hT&_r=1
+" target="_blank"><img src="tiktok-icon.png" alt="TikTok"></a>
+        </div>
+        <p>© 2024 RSThePoet. All rights reserved.</p>
+        <a href="#home" accesskey="h">Back to Top</a>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            if (body.hasAttribute('data-theme')) {
+                body.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Load saved theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</body>
+</html>
